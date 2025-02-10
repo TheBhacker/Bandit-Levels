@@ -1,0 +1,186 @@
+    /* Reset básico */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    /* Estilos globales */
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #1e1e2f; /* Fondo oscuro */
+        color: #ffffff; /* Texto blanco */
+        line-height: 1.6;
+        overflow-x: hidden;
+    }
+    /* Estilos para el fondo de vídeo */
+.video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Asegura que el vídeo esté detrás del contenido */
+    overflow: hidden;
+}
+
+#bg-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta el vídeo para cubrir todo el fondo */
+    transform: translate(-50%, -50%); /* Centra el vídeo */
+}
+
+  /* Asegura que el contenido sea legible sobre el vídeo */
+.content {
+    position: relative;
+    z-index: 1; /* Coloca el contenido encima del vídeo */
+    color: #ffffff; /* Texto blanco para contraste */
+}
+    
+    /* Contenedor principal */
+    .content {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 2rem;
+        position: relative;
+        z-index: 1;
+    }
+    
+    /* Header */
+    header {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+    
+    header h1 {
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+        margin-top: 1.5rem;
+        animation: bounce 2s infinite; /* Animación de rebote */
+    }
+    
+    h2{
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    }
+
+
+    p {
+        font-size: 1.2rem;
+        color: #e0e0e0; /* Gris claro */
+        margin-bottom: 1rem;
+    }
+    
+    .back-button {
+        display: inline-block;
+        background-color: #5b7d94;
+        color: #ffffff;
+        padding: 0.5rem 1rem;
+        border-radius: 4px;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .back-button:hover {
+        background-color: #000000;
+    }
+    
+    /* Terminal */
+    .terminal {
+        background-color: #000000; /* Fondo negro */
+        color: #ffffff; /* Texto blanco */
+        border-radius: 8px;
+        overflow: hidden;
+        margin-bottom: 1.5rem;
+        font-family: 'Courier New', monospace;
+    }
+    
+    .terminal-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.5rem 1rem;
+        background-color: #1e1e1e; /* Barra superior oscura */
+    }
+    
+    .buttons {
+        display: flex;
+        gap: 0.5rem;
+    }
+    
+    .button {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+    }
+    
+    .red {
+        background-color: #ff5f56;
+    }
+    
+    .yellow {
+        background-color: #ffbd2e;
+    }
+    
+    .green {
+        background-color: #27c93f;
+    }
+    
+    .title {
+        font-size: 0.8rem;
+        color: #ffffff;
+    }
+    
+    .terminal-body {
+        position: relative;
+        padding: 1rem;
+    }
+    
+    .terminal-body code {
+        color: #00ff00; /* Verde brillante para el texto del código */
+        display: block;
+        white-space: pre-wrap;
+        word-break: break-word;
+    }
+    
+    .copy-btn {
+        position: absolute;
+        top: 0.5rem;
+        right: 0.5rem;
+        background-color: #575757;
+        color: #ffffff;
+        padding: 0.25rem 0.75rem;
+        border-radius: 4px;
+        font-size: 0.8rem;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    
+    .copy-btn:hover {
+        background-color: #24642f;
+    }
+    
+    /* Footer */
+    footer {
+        text-align: center;
+        margin-top: 2rem;
+        font-size: 0.9rem;
+        color: #e0e0e0;
+    }
+    
+    /* Animación de rebote para el título */
+    @keyframes bounce {
+        0%, 100% {
+        transform: translateY(0);
+        }
+        50% {
+        transform: translateY(-10px);
+        }
+    }

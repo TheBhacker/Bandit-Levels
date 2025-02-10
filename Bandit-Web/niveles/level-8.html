@@ -1,0 +1,107 @@
+    <!DOCTYPE html>
+    <html lang="es">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nivel 8 - Bandit Levels</title>
+    <link rel="stylesheet" href="../css/blog.css">
+    </head>
+    <body>
+<!-- Fondo de vídeo -->
+<div class="video-background">
+    <video autoplay muted loop id="bg-video">
+    <source src="https://cdn.pixabay.com/video/2020/04/18/36503-427607440_large.mp4" type="video/mp4">
+    Tu navegador no soporta la etiqueta de vídeo.
+    </video>
+</div>
+
+    <!-- Contenido principal -->
+    <div class="content">
+        <header>
+        <a href="../index.html" class="back-button">← Volver al Inicio</a>
+        <h1>Nivel 8</h1>
+        <p>Líneas únicas que ocurren una sola vez 🔂</p>
+        </header>
+
+        <main>
+        <section>
+            <h2>Descripción del Reto 💻</h2>
+            <p>
+            En este nivel, aprenderás a conectarte a un servidor remoto usando SSH. 
+            El objetivo es familiarizarte con el comando básico de conexión y explorar el entorno.
+            </p>
+        </section>
+        <section>
+            <h2>Información de Login 🔑</h2>
+            <ul class="login-info">
+            <li><strong>Username:</strong> bandit8</li>
+            <li><strong>Password:</strong> dfwvzFQi4mU0wfNbFOe9RoWskMLg7eEc</li>
+            <li><strong>Host:</strong> bandit.labs.overthewire.org</li>
+            <li><strong>Port:</strong> 2220</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Pasos para Resolver el Nivel 🛠️</h2>
+            <ol>
+            <li>
+                <p>Conéctate al servidor usando SSH:</p>
+                <div class="terminal">
+                <div class="terminal-header">
+                    <div class="buttons">
+                    <span class="button red"></span>
+                    <span class="button yellow"></span>
+                    <span class="button green"></span>
+                    </div>
+                    <p class="title">bash</p>
+                </div>
+                <div class="terminal-body">
+                    <pre><code class="bash">
+$ ssh bandit8@bandit.labs.overthewire.org -p 2220
+This is a OverTheWire game server. More information on http://www.overthewire.org/wargamesbandit0@bandit.labs.overthewire.org's password:
+dfwvzFQi4mU0wfNbFOe9RoWskMLg7eEc
+                    </code></pre>
+                    <button class="copy-btn" onclick="copyCode(this)">Copiar ✅</button>
+                </div>
+                </div>
+            </li>
+            <li>
+                <p>Buscamos la contraseña para el siguiente nivel:</p>
+                <div class="terminal">
+                <div class="terminal-header">
+                    <div class="buttons">
+                    <span class="button red"></span>
+                    <span class="button yellow"></span>
+                    <span class="button green"></span>
+                    </div>
+                    <p class="title">bash</p>
+                </div>
+                <div class="terminal-body">
+                    <pre><code class="bash">
+bandit8@bandit:~$ ls
+data.txt
+bandit8@bandit:~$ sort data.txt | uniq -u
+4CKMh1JI91bUIZZPXDqGanal4xvAg0JM
+bandit8@bandit:~$  
+                    </code></pre>
+                    <button class="copy-btn" onclick="copyCode(this)">Copiar ✅</button>
+                </div>
+        </section>
+
+        <section>
+            <h2>Resultado Esperado 🎉</h2>
+            <p>
+            Después de completar los pasos, habrás accedido al servidor y explorado el entorno inicial.
+            Este nivel es solo el comienzo de tu viaje en Bandit.
+            </p>
+        </section>
+        </main>
+
+        <footer>
+        <p>&copy; 2025 Bandit Levels - Desarrollado por Jordi Bravo Jorquera 🧑‍💻</p>
+        </footer>
+    </div>
+
+    <script src="../js/scripts.js"></script>
+    </body>
+    </html>
