@@ -3,7 +3,7 @@
     <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nivel 10 - Bandit Levels</title>
+    <title>Nivel 11 - Bandit Levels</title>
     <link rel="stylesheet" href="../css/blog.css">
     </head>
     <body>
@@ -19,8 +19,8 @@
     <div class="content">
         <header>
         <a href="../index.html" class="back-button">← Volver al Inicio</a>
-        <h1>Nivel 10</h1>
-        <p>Cifrado en base64 🔒</p>
+        <h1>Nivel 11</h1>
+        <p>Cifrado ROT13 🔒</p>
         </header>
 
         <main>
@@ -34,8 +34,8 @@
         <section>
             <h2>Información de Login 🔑</h2>
             <ul class="login-info">
-            <li><strong>Username:</strong> bandit10</li>
-            <li><strong>Password:</strong> FGUW5ilLVJrxX9kMYMmlN4MgbpfMiqey</li>
+            <li><strong>Username:</strong> bandit11</li>
+            <li><strong>Password:</strong> dtR173fZKb0RRsDFSGsg2RWnpNVj3qRr</li>
             <li><strong>Host:</strong> bandit.labs.overthewire.org</li>
             <li><strong>Port:</strong> 2220</li>
             </ul>
@@ -57,9 +57,9 @@
                 </div>
                 <div class="terminal-body">
                     <pre><code class="bash">
-$ ssh bandit10@bandit.labs.overthewire.org -p 2220
+$ ssh bandit11@bandit.labs.overthewire.org -p 2220
 This is a OverTheWire game server. More information on http://www.overthewire.org/wargamesbandit0@bandit.labs.overthewire.org's password:
-FGUW5ilLVJrxX9kMYMmlN4MgbpfMiqey
+dtR173fZKb0RRsDFSGsg2RWnpNVj3qRr
                     </code></pre>
                     <button class="copy-btn" onclick="copyCode(this)">Copiar ✅</button>
                 </div>
@@ -78,11 +78,13 @@ FGUW5ilLVJrxX9kMYMmlN4MgbpfMiqey
                 </div>
                 <div class="terminal-body">
                     <pre><code class="bash">
-bandit10@bandit:~$ ls
+bandit11@bandit:~$ ls
 data.txt
-bandit10@bandit:~$ cat data.txt | base64 -d
-The password is dtR173fZKb0RRsDFSGsg2RWnpNVj3qRr
-bandit10@bandit:~$ 
+bandit11@bandit:~$ cat data.txt 
+Gur cnffjbeq vf 7k16JArUVv5LxVuJfsSVdbbtaHGlw9D4
+bandit11@bandit:~$ echo "Gur cnffjbeq vf 7k16JArUVv5LxVuJfsSVdbbtaHGlw9D4" | tr 'A-Za-z' 'N-ZA-Mn-za-m'
+The password is 7x16WNeHIi5YkIhWsfFIqoognUTyj9Q4
+bandit11@bandit:~$ 
                     </code></pre>
                     <button class="copy-btn" onclick="copyCode(this)">Copiar ✅</button>
                 </div>
