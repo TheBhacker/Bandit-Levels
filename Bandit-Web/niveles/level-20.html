@@ -3,7 +3,7 @@
     <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nivel 8 - Bandit Levels</title>
+    <title>Nivel 20 - Bandit Levels</title>
     <link rel="stylesheet" href="../css/blog.css">
     <link rel="shortcut icon" href="https://overthewire.org/img/favicon.ico" type="image/x-icon">
     </head>
@@ -20,8 +20,8 @@
     <div class="content">
         <header>
         <a href="../index.html" class="back-button">← Volver al Inicio</a>
-        <h1>Nivel 8</h1>
-        <p>Líneas únicas que ocurren una sola vez 🔂</p>
+        <h1>Nivel 20</h1>
+        <p>Interceptar peticion en puerto de escucha</p>
         </header>
 
         <main>
@@ -35,8 +35,8 @@
         <section>
             <h2>Información de Login 🔑</h2>
             <ul class="login-info">
-            <li><strong>Username:</strong> bandit8</li>
-            <li><strong>Password:</strong> dfwvzFQi4mU0wfNbFOe9RoWskMLg7eEc</li>
+            <li><strong>Username:</strong> bandit20</li>
+            <li><strong>Password:</strong> 0qXahG8ZjOVMN9Ghs7iOWsCfZyXOUbYO</li>
             <li><strong>Host:</strong> bandit.labs.overthewire.org</li>
             <li><strong>Port:</strong> 2220</li>
             </ul>
@@ -58,9 +58,9 @@
                 </div>
                 <div class="terminal-body">
                     <pre><code class="bash">
-$ ssh bandit8@bandit.labs.overthewire.org -p 2220
+$ ssh bandit20@bandit.labs.overthewire.org -p 2220
 This is a OverTheWire game server. More information on http://www.overthewire.org/wargamesbandit0@bandit.labs.overthewire.org's password:
-dfwvzFQi4mU0wfNbFOe9RoWskMLg7eEc
+0qXahG8ZjOVMN9Ghs7iOWsCfZyXOUbYO
                     </code></pre>
                     <button class="copy-btn" onclick="copyCode(this)">Copiar ✅</button>
                 </div>
@@ -79,11 +79,22 @@ dfwvzFQi4mU0wfNbFOe9RoWskMLg7eEc
                 </div>
                 <div class="terminal-body">
                     <pre><code class="bash">
-bandit8@bandit:~$ ls
-data.txt
-bandit8@bandit:~$ sort data.txt | uniq -u
-4CKMh1JI91bUIZZPXDqGanal4xvAg0JM
-bandit8@bandit:~$  
+bandit20@bandit:~$ ls
+suconnect
+bandit20@bandit:~$ ./suconnect 
+Usage: ./suconnect < portnumber >
+This program will connect to the given port on localhost using TCP. If it receives the correct password from the other side, the next password is transmitted back.
+bandit20@bandit:~$ ./suconnect 1234
+Read: 0qXahG8ZjOVMN9Ghs7iOWsCfZyXOUbYO
+Password matches, sending next password
+bandit20@bandit:~$
+-----------------------------------------------------------------------------------------------
+bandit20@bandit:~$ nc -nlvp 1234
+Listening on 0.0.0.0 1234
+Connection received on 127.0.0.1 43810
+0qXahG8ZjOVMN9Ghs7iOWsCfZyXOUbYO
+EeoULMCra2q0dSkYj561DX7s1CpBuOBt
+bandit20@bandit:~$ 
                     </code></pre>
                     <button class="copy-btn" onclick="copyCode(this)">Copiar ✅</button>
                 </div>
@@ -92,8 +103,7 @@ bandit8@bandit:~$
         <section>
             <h2>Resultado Esperado 🎉</h2>
             <p>
-            Después de completar los pasos, habrás accedido al servidor y explorado el entorno inicial.
-            Este nivel es solo el comienzo de tu viaje en Bandit.
+            Sigue así y llegarás al final del juego. ¡Ánimo! 🚀
             </p>
         </section>
         </main>

@@ -1,0 +1,200 @@
+    <!DOCTYPE html>
+    <html lang="es">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nivel 25 - Bandit Levels</title>
+    <link rel="stylesheet" href="../css/blog.css">
+    <link rel="shortcut icon" href="https://overthewire.org/img/favicon.ico" type="image/x-icon">
+    </head>
+    <body>
+<!-- Fondo de vídeo -->
+<div class="video-background">
+    <video autoplay muted loop id="bg-video">
+    <source src="https://cdn.pixabay.com/video/2020/04/18/36503-427607440_large.mp4" type="video/mp4">
+    Tu navegador no soporta la etiqueta de vídeo.
+    </video>
+</div>
+
+    <!-- Contenido principal -->
+    <div class="content">
+        <header>
+        <a href="../index.html" class="back-button">← Volver al Inicio</a>
+        <h1>Nivel 25</h1>
+        <p>Explora programas con permisos SetUID</p>
+        </header>
+
+        <main>
+        <section>
+            <h2>Descripción del Reto 💻</h2>
+            <p>
+            En este nivel, aprenderás a conectarte a un servidor remoto usando SSH. 
+            El objetivo es familiarizarte con el comando básico de conexión y explorar el entorno.
+            </p>
+        </section>
+        <section>
+            <h2>Información de Login 🔑</h2>
+            <ul class="login-info">
+            <li><strong>Username:</strong> bandit25</li>
+            <li><strong>Password:</strong> iCi86ttT4KSNe1armKiwbQNmB3YJP3q4</li>
+            <li><strong>Host:</strong> bandit.labs.overthewire.org</li>
+            <li><strong>Port:</strong> 2220</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Pasos para Resolver el Nivel 🛠️</h2>
+            <ol>
+            <li>
+                <p>Conéctate al servidor usando SSH:</p>
+                <div class="terminal">
+                <div class="terminal-header">
+                    <div class="buttons">
+                    <span class="button red"></span>
+                    <span class="button yellow"></span>
+                    <span class="button green"></span>
+                    </div>
+                    <p class="title">bash</p>
+                </div>
+                <div class="terminal-body">
+                    <pre><code class="bash">
+$ ssh bandit25@bandit.labs.overthewire.org -p 2220
+This is a OverTheWire game server. More information on http://www.overthewire.org/wargamesbandit0@bandit.labs.overthewire.org's password:
+iCi86ttT4KSNe1armKiwbQNmB3YJP3q4
+                    </code></pre>
+                    <button class="copy-btn" onclick="copyCode(this)">Copiar ✅</button>
+                </div>
+                </div>
+            </li>
+            <li>
+                <p>Buscamos la contraseña para el siguiente nivel:</p>
+                <div class="terminal">
+                <div class="terminal-header">
+                    <div class="buttons">
+                    <span class="button red"></span>
+                    <span class="button yellow"></span>
+                    <span class="button green"></span>
+                    </div>
+                    <p class="title">bash</p>
+                </div>
+                <div class="terminal-body">
+                    <pre><code class="bash">
+bandit25@bandit:~$ ls
+bandit26.sshkey
+bandit25@bandit:~$ ssh -i bandit26.sshkey bandit26@localhost -p 2220   
+                    </code></pre>
+                    <button class="copy-btn" onclick="copyCode(this)">Copiar ✅</button>
+                </div>
+                </div>
+            </li>
+            <li>
+                <p>Buscamos la contraseña para el siguiente nivel:</p>
+                <div class="terminal">
+                <div class="terminal-header">
+                    <div class="buttons">
+                    <span class="button red"></span>
+                    <span class="button yellow"></span>
+                    <span class="button green"></span>
+                    </div>
+                    <p class="title">bash</p>
+                </div>
+                <div class="terminal-body">
+                    <pre><code class="bash">
+  _                     _ _ _   ___   __  
+ | |                   | (_) | |__ \ / /  
+ | |__   __ _ _ __   __| |_| |_   ) / /_  
+ | '_ \ / _` | '_ \ / _` | | __| / / '_ \ 
+ | |_) | (_| | | | | (_| | | |_ / /| (_) |
+--More--(83%)  
+                    </code></pre>
+                    <button class="copy-btn" onclick="copyCode(this)">Copiar ✅</button>
+                </div>
+                </div>
+            </li>
+            <li>
+                <p>Buscamos la contraseña para el siguiente nivel:</p>
+                <div class="terminal">
+                <div class="terminal-header">
+                    <div class="buttons">
+                    <span class="button red"></span>
+                    <span class="button yellow"></span>
+                    <span class="button green"></span>
+                    </div>
+                    <p class="title">bash</p>
+                </div>
+                <div class="terminal-body">
+                    <pre><code class="bash">
+  _                     _ _ _   ___   __  
+ | |                   | (_) | |__ \ / /  
+ | |__   __ _ _ __   __| |_| |_   ) / /_  
+ | '_ \ / _` | '_ \ / _` | | __| / / '_ \ 
+ | |_) | (_| | | | | (_| | | |_ / /| (_) |
+:set shell=/bin/bash 
+</code></pre>
+                    <button class="copy-btn" onclick="copyCode(this)">Copiar ✅</button>
+                </div>
+                </div>
+            </li>
+            <li>
+                <p>Buscamos la contraseña para el siguiente nivel:</p>
+                <div class="terminal">
+                <div class="terminal-header">
+                    <div class="buttons">
+                    <span class="button red"></span>
+                    <span class="button yellow"></span>
+                    <span class="button green"></span>
+                    </div>
+                    <p class="title">bash</p>
+                </div>
+                <div class="terminal-body">
+                    <pre><code class="bash">
+  _                     _ _ _   ___   __
+ | |                   | (_) | |__ \ / /  
+ | |__   __ _ _ __   __| |_| |_   ) / /_  
+ | '_ \ / _` | '_ \ / _` | | __| / / '_ \
+ | |_) | (_| | | | | (_| | | |_ / /| (_) |
+:shell
+</code></pre>
+                    <button class="copy-btn" onclick="copyCode(this)">Copiar ✅</button>
+                </div>
+                </div>
+            </li>
+            <li>
+                <p>Buscamos la contraseña para el siguiente nivel:</p>
+                <div class="terminal">
+                <div class="terminal-header">
+                    <div class="buttons">
+                    <span class="button red"></span>
+                    <span class="button yellow"></span>
+                    <span class="button green"></span>
+                    </div>
+                    <p class="title">bash</p>
+                </div>
+                <div class="terminal-body">
+                    <pre><code class="bash">
+bandit26@bandit:~$ cat /etc/bandit_pass/bandit26
+s0773xxkk0MXfdqOfPRVr9L3jJBUOgCZ
+bandit26@bandit:~$ 
+</code></pre>
+                    <button class="copy-btn" onclick="copyCode(this)">Copiar ✅</button>
+                </div>
+                </div>
+            </li>
+        </section>
+
+        <section>
+            <h2>Resultado Esperado 🎉</h2>
+            <p>
+            Sigue así y llegarás al final del juego. ¡Ánimo! 🚀
+            </p>
+        </section>
+        </main>
+
+        <footer>
+        <p>&copy; 2025 Bandit Levels - Desarrollado por Jordi Bravo Jorquera 🧑‍💻</p>
+        </footer>
+    </div>
+
+    <script src="../js/scripts.js"></script>
+    </body>
+    </html>

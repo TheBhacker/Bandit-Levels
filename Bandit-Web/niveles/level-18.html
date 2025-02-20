@@ -3,7 +3,7 @@
     <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nivel 8 - Bandit Levels</title>
+    <title>Nivel 18 - Bandit Levels</title>
     <link rel="stylesheet" href="../css/blog.css">
     <link rel="shortcut icon" href="https://overthewire.org/img/favicon.ico" type="image/x-icon">
     </head>
@@ -20,8 +20,8 @@
     <div class="content">
         <header>
         <a href="../index.html" class="back-button">← Volver al Inicio</a>
-        <h1>Nivel 8</h1>
-        <p>Líneas únicas que ocurren una sola vez 🔂</p>
+        <h1>Nivel 18</h1>
+        <p>Colar comandos en la conexión ⛓</p>
         </header>
 
         <main>
@@ -35,8 +35,8 @@
         <section>
             <h2>Información de Login 🔑</h2>
             <ul class="login-info">
-            <li><strong>Username:</strong> bandit8</li>
-            <li><strong>Password:</strong> dfwvzFQi4mU0wfNbFOe9RoWskMLg7eEc</li>
+            <li><strong>Username:</strong> bandit18</li>
+            <li><strong>Password:</strong> x2gLTTjFwMOhQ8oWNbMN362QKxfRqGlO</li>
             <li><strong>Host:</strong> bandit.labs.overthewire.org</li>
             <li><strong>Port:</strong> 2220</li>
             </ul>
@@ -58,9 +58,9 @@
                 </div>
                 <div class="terminal-body">
                     <pre><code class="bash">
-$ ssh bandit8@bandit.labs.overthewire.org -p 2220
+$ ssh bandit18@bandit.labs.overthewire.org -p 2220
 This is a OverTheWire game server. More information on http://www.overthewire.org/wargamesbandit0@bandit.labs.overthewire.org's password:
-dfwvzFQi4mU0wfNbFOe9RoWskMLg7eEc
+x2gLTTjFwMOhQ8oWNbMN362QKxfRqGlO
                     </code></pre>
                     <button class="copy-btn" onclick="copyCode(this)">Copiar ✅</button>
                 </div>
@@ -79,21 +79,59 @@ dfwvzFQi4mU0wfNbFOe9RoWskMLg7eEc
                 </div>
                 <div class="terminal-body">
                     <pre><code class="bash">
-bandit8@bandit:~$ ls
-data.txt
-bandit8@bandit:~$ sort data.txt | uniq -u
-4CKMh1JI91bUIZZPXDqGanal4xvAg0JM
-bandit8@bandit:~$  
+❯ sshpass -p "x2gLTTjFwMOhQ8oWNbMN362QKxfRqGlO" ssh bandit18@bandit.labs.overthewire.org -p2220 ls
+                        _                     _ _ _   
+                        | |__   __ _ _ __   __| (_) |_ 
+                        | '_ \ / _` | '_ \ / _` | | __|
+                        | |_) | (_| | | | | (_| | | |_ 
+                        |_.__/ \__,_|_| |_|\__,_|_|\__|
+                                                    
+
+                    This is an OverTheWire game server. 
+            More information on http://www.overthewire.org/wargames
+
+readme
                     </code></pre>
                     <button class="copy-btn" onclick="copyCode(this)">Copiar ✅</button>
                 </div>
+                </div>
+            </li>
+            <li>
+                <p>Buscamos la contraseña para el siguiente nivel:</p>
+                <div class="terminal">
+                <div class="terminal-header">
+                    <div class="buttons">
+                    <span class="button red"></span>
+                    <span class="button yellow"></span>
+                    <span class="button green"></span>
+                    </div>
+                    <p class="title">bash</p>
+                </div>
+                <div class="terminal-body">
+                    <pre><code class="bash">
+❯ sshpass -p "x2gLTTjFwMOhQ8oWNbMN362QKxfRqGlO" ssh bandit18@bandit.labs.overthewire.org -p2220 cat readme
+                        _                     _ _ _   
+                        | |__   __ _ _ __   __| (_) |_ 
+                        | '_ \ / _` | '_ \ / _` | | __|
+                        | |_) | (_| | | | | (_| | | |_ 
+                        |_.__/ \__,_|_| |_|\__,_|_|\__|
+                                                    
+
+                    This is an OverTheWire game server. 
+            More information on http://www.overthewire.org/wargames
+
+cGWpMaKXVwDUNgPAVJbWYuGHVn9zl3j8
+                    </code></pre>
+                    <button class="copy-btn" onclick="copyCode(this)">Copiar ✅</button>
+                </div>
+                </div>
+            </li>
         </section>
 
         <section>
             <h2>Resultado Esperado 🎉</h2>
             <p>
-            Después de completar los pasos, habrás accedido al servidor y explorado el entorno inicial.
-            Este nivel es solo el comienzo de tu viaje en Bandit.
+            Sigue así y llegarás al final del juego. ¡Ánimo! 🚀
             </p>
         </section>
         </main>
