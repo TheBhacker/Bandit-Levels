@@ -1,161 +1,162 @@
-    /* Reset básico */
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-    
-    /* Estilos globales */
-    body {
-        font-family: Arial, sans-serif;
-        background-color: #1e1e2f; /* Fondo oscuro */
-        color: #ffffff; /* Texto blanco */
-        line-height: 1.6;
-        overflow-x: hidden; /* Evita desbordamiento horizontal */
-    }
-    
-    /* Fondo animado */
-    .background-animation {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(270deg, #202020, #2d8122, #220aac);
-        background-size: 600% 600%;
-        animation: gradient-animation 15s infinite;
-        z-index: -1;
-    }
-    
-    @keyframes gradient-animation {
-        0% {
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos globales */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1e1e2f; /* Fondo oscuro */
+    color: #ffffff; /* Texto blanco */
+    line-height: 1.6;
+    overflow-x: hidden; /* Evita desbordamiento horizontal */
+}
+
+/* Fondo animado */
+.background-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(270deg, #202020, #2d8122, #220aac);
+    background-size: 600% 600%;
+    animation: gradient-animation 15s infinite;
+    z-index: -1;
+}
+
+@keyframes gradient-animation {
+    0% {
         background-position: 0% 50%;
-        }
-        50% {
+    }
+    50% {
         background-position: 100% 50%;
-        }
-        100% {
+    }
+    100% {
         background-position: 0% 50%;
-        }
     }
-    
-    /* Contenedor principal */
-    .content {
-        position: relative;
-        z-index: 1;
-        padding: 2rem;
-    }
-    
-    /* Header */
-    header {
-        text-align: center;
-        padding: 2rem 1rem;
-        margin-bottom: 2rem;
-    }
-    
-    header h1 {
-        font-size: 3rem;
-        margin-bottom: 0.5rem;
-        animation: bounce 2s infinite; /* Animación de rebote */
-    }
-    
-    header p {
-        font-size: 1.2rem;
-        color: #e0e0e0; /* Gris claro */
-    }
-    
-    /* Sección "Acerca de" */
-    .about {
-        max-width: 800px;
-        margin: 0 auto 2rem auto;
-        text-align: center;
-    }
-    
-    .about h2 {
-        font-size: 2rem;
-        margin-bottom: 1rem;
-    }
-    
-    .about p {
-        font-size: 1rem;
-        color: #e0e0e0;
-        line-height: 1.8;
-    }
-    
-    /* Sección de niveles */
-    .levels h2 {
-        text-align: center;
-        margin-bottom: 2rem;
-        font-size: 1.8rem;
-    }
-    
-    .level-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Grid responsivo */
-        gap: 1.5rem;
-        padding: 1rem;
-    }
-    
-    .level-card {
-        background-color: rgba(42, 42, 64, 0.8); /* Fondo semi-transparente */
-        padding: 1.5rem;
-        border-radius: 8px;
-        text-align: center;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        position: relative;
-    }
-    
-    .level-card:hover {
-        transform: translateY(-10px); /* Efecto de elevación */
-        box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
-    }
-    
-    .level-card img {
-        width: 64px;
-        height: 64px;
-        margin-bottom: 1rem;
-    }
-    
-    .level-card h3 {
-        font-size: 1.5rem;
-        margin-bottom: 0.5rem;
-    }
-    
-    .level-card p {
-        font-size: 1rem;
-        color: #e0e0e0; /* Gris claro */
-        margin-bottom: 1rem;
-    }
-    
-    .level-card a {
-        display: inline-block;
-        background-color: #4c4cff; /* Botón azul */
-        color: #ffffff;
-        padding: 0.75rem 1.5rem;
-        border-radius: 4px;
-        font-weight: bold;
-        text-decoration: none;
-        transition: background-color 0.3s ease;
-    }
-    
-    .level-card a:hover {
-        background-color: #ff6f61; /* Botón rojo al pasar el mouse */
-    }
-    
-    /* Footer */
-    footer {
-        text-align: center;
-        margin-top: 2rem;
-        font-size: 0.9rem;
-        color: #e0e0e0;
-    }
-    
-    /* Animación de rebote para el título */
-    @keyframes bounce {
-        0%, 100% {
-        transform: translateY(0);
-        }
-        50% {
-        transform: translateY(-10px);
-        }
-    }
+}
+
+/* Contenedor principal */
+.content {
+    position: relative;
+    z-index: 1;
+    padding: 2rem;
+}
+
+/* Header */
+header {
+    text-align: center;
+    padding: 2rem 1rem;
+    margin-bottom: 2rem;
+}
+
+/* Efecto de máquina de escribir con cursor parpadeante */
+header h1 {
+    font-size: 3rem;
+    margin-bottom: 0.7rem;
+}
+
+@keyframes neon {
+    0%, 100% { text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 20px #33ff00, 0 0 40px #48ff00; }
+    50% { text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 40px #00ff0d, 0 0 80px #1eff00; }
+}
+
+h1 {
+    color: #000000;
+    animation: neon 1.5s infinite;
+}
+
+
+header p {
+    font-size: 1.2rem;
+    color: #e0e0e0; /* Gris claro */
+}
+
+/* Sección "Acerca de" */
+.about {
+    max-width: 800px;
+    margin: 0 auto 2rem auto;
+    text-align: justify;
+}
+
+.about h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.about p {
+    font-size: 1rem;
+    color: #e0e0e0;
+    line-height: 1.8;
+}
+
+/* Sección de niveles */
+.levels h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+}
+
+.level-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Grid responsivo */
+    gap: 1.5rem;
+    padding: 1rem;
+}
+
+.level-card {
+    background-color: rgba(42, 42, 64, 0.8); /* Fondo semi-transparente */
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+.level-card:hover {
+    transform: translateY(-10px); /* Efecto de elevación */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
+}
+
+.level-card img {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 1rem;
+}
+
+.level-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.level-card p {
+    font-size: 1rem;
+    color: #e0e0e0; /* Gris claro */
+    margin-bottom: 1rem;
+}
+
+.level-card a {
+    display: inline-block;
+    background-color: #4c4cff; /* Botón azul */
+    color: #ffffff;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.level-card a:hover {
+    background-color: #ff6f61; /* Botón rojo al pasar el mouse */
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    color: #e0e0e0;
+}
